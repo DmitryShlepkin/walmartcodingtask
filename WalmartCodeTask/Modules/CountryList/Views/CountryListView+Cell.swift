@@ -58,6 +58,8 @@ private extension CountryListCellView {
         codeLabel.numberOfLines = 1
         codeLabel.textColor = .black
         codeLabel.textAlignment = .right
+        codeLabel.font = UIFont.preferredFont(forTextStyle: .body)
+        codeLabel.adjustsFontForContentSizeCategory = true
         codeLabel
             .width(48)
             .trailing(to: containerView.trailingAnchor, spacing: -8)
@@ -69,6 +71,8 @@ private extension CountryListCellView {
         containerView.addSubview(titleLabel)
         titleLabel.numberOfLines = 0
         titleLabel.textColor = .black
+        titleLabel.font = UIFont.preferredFont(forTextStyle: .body)
+        titleLabel.adjustsFontForContentSizeCategory = true
         titleLabel
             .leading(to: containerView.leadingAnchor, spacing: 8)
             .trailing(to: codeLabel.leadingAnchor, spacing: 16)
@@ -79,7 +83,8 @@ private extension CountryListCellView {
         containerView.addSubview(capitalLabel)
         capitalLabel.numberOfLines = 0
         capitalLabel.textColor = .darkGray
-        capitalLabel.font = UIFont.systemFont(ofSize: 14, weight: .light)
+        capitalLabel.font = UIFont.preferredFont(forTextStyle: .body)
+        capitalLabel.adjustsFontForContentSizeCategory = true
         capitalLabel
             .leading(to: containerView.leadingAnchor, spacing: 8)
             .trailing(to: codeLabel.leadingAnchor, spacing: 16)

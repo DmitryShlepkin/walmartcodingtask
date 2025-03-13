@@ -36,7 +36,8 @@ private extension LoadingView {
     private func setupTitleLabel() {
         addSubview(titleLabel)
         titleLabel.text = "Loading"
-        titleLabel.font = UIFont(name: "Avenir Next Regular", size: 22.0)
+        titleLabel.font = UIFont.preferredFont(forTextStyle: .body)
+        titleLabel.adjustsFontForContentSizeCategory = true        
         titleLabel.textColor = .darkGray
         titleLabel
             .centerX(to: self)

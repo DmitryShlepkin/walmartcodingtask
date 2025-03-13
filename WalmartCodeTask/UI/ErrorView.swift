@@ -62,7 +62,8 @@ extension ErrorView {
         addSubview(titleLabel)
         titleLabel.text = titleLabelText
         titleLabel.textColor = .red
-        titleLabel.font = UIFont(name: "Avenir Next Regular", size: 18)
+        titleLabel.font = UIFont.preferredFont(forTextStyle: .body)
+        titleLabel.adjustsFontForContentSizeCategory = true
         titleLabel.textAlignment = .center
         titleLabel.numberOfLines = 1
         titleLabel
@@ -79,9 +80,9 @@ extension ErrorView {
         actionButton.setTitle(buttonText, for: .normal)
         actionButton.backgroundColor = .black
         actionButton.layer.cornerRadius = 8
+        actionButton.titleLabel?.font = UIFont.preferredFont(forTextStyle: .body)
+        actionButton.titleLabel?.adjustsFontForContentSizeCategory = true
         actionButton
-            .width(140)
-            .height(48)
             .top(to: titleLabel.bottomAnchor, spacing: 32)
             .centerX(to: self)
         actionButton.addTarget(self, action: #selector(actionButtonHandler), for: .touchUpInside)

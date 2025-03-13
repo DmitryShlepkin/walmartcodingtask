@@ -46,7 +46,8 @@ extension EmptyView {
     
     private func setupTitleLabel() {
         addSubview(titleLabel)
-        titleLabel.font = UIFont(name: "Avenir Next Regular", size: 18.0)
+        titleLabel.font = UIFont.preferredFont(forTextStyle: .body)
+        titleLabel.adjustsFontForContentSizeCategory = true
         titleLabel.textColor = .darkGray
         titleLabel
             .centerX(to: self)
@@ -55,7 +56,8 @@ extension EmptyView {
     
     private func setupDescription() {
         addSubview(descriptionLabel)
-        descriptionLabel.font = UIFont(name: "Avenir Next Regular", size: 14.0)
+        descriptionLabel.font = UIFont.preferredFont(forTextStyle: .caption2)
+        descriptionLabel.adjustsFontForContentSizeCategory = true
         descriptionLabel.textColor = .darkGray
         descriptionLabel
             .centerX(to: self)
