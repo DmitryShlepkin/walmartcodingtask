@@ -1,5 +1,10 @@
+# Demo
 
 ![walmart-coding-task-01](https://github.com/user-attachments/assets/e2c8332d-8978-4150-a449-287c5d98bc29)
+
+# Dynamic Fonts 
+
+![walmart-coding-task-02](https://github.com/user-attachments/assets/4e2afb17-aebb-4c8c-b705-294956a67b5b)
 
 # iOS programming exercise.
 
