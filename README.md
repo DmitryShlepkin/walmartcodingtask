@@ -1,6 +1,7 @@
 # Demo
 
-![walmart-coding-task-01](https://github.com/user-attachments/assets/e2c8332d-8978-4150-a449-287c5d98bc29)
+![walmart-coding-task-01](https://github.com/user-attachments/assets/8e93623f-cc19-4503-9bc7-1d40eca650ae)
+
 
 # Dynamic Fonts 
 
