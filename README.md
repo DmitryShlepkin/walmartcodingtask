@@ -1,5 +1,5 @@
 
-![download](https://github.com/user-attachments/assets/5729fa4c-ed56-4ab6-8902-919bc682cc73)
+![walmart-coding-task-01](https://github.com/user-attachments/assets/e2c8332d-8978-4150-a449-287c5d98bc29)
 
 # iOS programming exercise.
 
