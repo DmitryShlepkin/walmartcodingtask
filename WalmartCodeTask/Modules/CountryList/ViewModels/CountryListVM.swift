@@ -81,24 +81,24 @@ final class CountryListVM: CountryListViewModeling {
     }
     
     func showFullList() {
-        if countries.count > 0 {
-            self.updateState?(.success(.init(
-                title: "",
-                description: "",
-                countries: didCreateCellViewModels(from: countries)
-            )))
-        }
+        guard countries.count != 0 else { return }
+        self.updateState?(.success(.init(
+            title: "",
+            description: "",
+            countries: didCreateCellViewModels(from: countries)
+        )))
     }
     
     func showFilteredList(by searchText: String) {
-        if countries.count > 0 {
-            let filteredCountries = filterCountries(by: searchText)
-            self.updateState?(.success(.init(
-                title: "",
-                description: "",
-                countries: didCreateCellViewModels(from: filteredCountries)
-            )))
-        }
+        guard countries.count != 0 else { return }
+        let filteredCountries = filterCountries(by: searchText)
+        let title = filteredCountries.count > 0 ? "" : "Empty"
+        let description = filteredCountries.count > 0 ? "" : "Country list is empty."
+        self.updateState?(.success(.init(
+            title: title,
+            description: description,
+            countries: didCreateCellViewModels(from: filteredCountries)
+        )))
     }
     
     func filterCountries(by searchText: String) -> [Country] {

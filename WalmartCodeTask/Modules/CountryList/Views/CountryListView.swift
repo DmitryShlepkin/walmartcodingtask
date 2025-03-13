@@ -46,7 +46,13 @@ final class CountryListView: UIView {
             break
         case .success(let success):
             cellsData = success.countries ?? []
-            setupTableView()
+            guard let count = success.countries?.count else { break }
+            if count > 0 {
+                setupTableView()
+            } else {
+                setupEmptyView()
+                emptyView.updateWith(title: success.title, description: success.description)
+            }
             break
         }
     }
