@@ -39,44 +39,47 @@ final class CountryListVM: CountryListViewModeling {
         )))
         
         /// Request data from network
-        let (list, error) = try await networkManager.fetch(
+        let result = await networkManager.fetch(
             url: EndPoints.countries.rawValue,
             as: [Country].self
         )
     
-        /// Handle Error
-        if (error) != nil {
+        switch result {
+        case .success(let list):
+            
+            /// Check Data
+            guard let list else {
+                self.updateState?(.error(.init(
+                    title: "Parse Error",
+                    description: "Please, try again later."
+                )))
+                return
+            }
+            
+            /// Check Data count
+            if list.count == 0 {
+                self.updateState?(.empty(.init(
+                    title: "Empty",
+                    description: "Country list is empty."
+                )))
+            }
+
+            /// Handle Data
+            countries = list
+            self.updateState?(.success(.init(
+                title: "",
+                description: "",
+                countries: didCreateCellViewModels(from: countries)
+            )))
+            
+        case .failure(_):
+            
             self.updateState?(.error(.init(
                 title: "Network Error",
                 description: "Please, try again later."
             )))
-            return
+            
         }
-        
-        /// Check Data
-        guard let list else {
-            self.updateState?(.error(.init(
-                title: "Parse Error",
-                description: "Please, try again later."
-            )))
-            return
-        }
-        
-        /// Check Data count
-        if list.count == 0 {
-            self.updateState?(.empty(.init(
-                title: "Empty",
-                description: "Country list is empty."
-            )))
-        }
-
-        /// Handle Data
-        countries = list
-        self.updateState?(.success(.init(
-            title: "",
-            description: "",
-            countries: didCreateCellViewModels(from: countries)
-        )))
         
     }
     
